@@ -47,15 +47,16 @@ class LoginViewController: UIViewController {
         
     }
     
-    /* ID PW 찾기 Action */
-    @IBAction func findUserIDPWAction(_ sender: Any) {
-        
+    /* ID PW 찾기 화면 이동 Action */
+    @IBAction func findUserAction(_ sender: Any) {
     }
     
-    /* 회원가입 Action */
+    
+    /* 회원가입 화면 이동 Action */
     @IBAction func joinUserAction(_ sender: Any) {
-        
+        // print("join button click")
+        let joinVC = JoinUserViewController(nibName: "JoinUserViewController", bundle: nil)
+        self.present(joinVC, animated: true, completion: nil)
     }
     
-
 }

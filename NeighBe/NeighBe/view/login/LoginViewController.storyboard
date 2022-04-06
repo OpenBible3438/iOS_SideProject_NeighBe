@@ -58,12 +58,18 @@
                                 <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ID PW 찾기"/>
+                                <connections>
+                                    <action selector="findUserAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="w8y-sy-A3J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="joinUserButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-0S-Sjr">
                                 <rect key="frame" x="217" y="679" width="73" height="31"/>
                                 <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                <connections>
+                                    <action selector="joinUserAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e2M-cm-qHZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
