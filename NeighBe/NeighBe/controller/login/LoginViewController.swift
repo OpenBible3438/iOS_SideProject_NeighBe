@@ -34,11 +34,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 버튼 텍스트 크기 조정
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        findUserButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        joinUserButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
 
     }
     

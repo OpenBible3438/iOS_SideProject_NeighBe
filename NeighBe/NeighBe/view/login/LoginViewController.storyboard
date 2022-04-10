@@ -42,11 +42,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDB-X3-yGR">
-                                <rect key="frame" x="100" y="472" width="190" height="31"/>
+                                <rect key="frame" x="100" y="472" width="190" height="29.666666666666686"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Login">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                     <color key="baseBackgroundColor" red="0.0039215686274509803" green="0.11764705882352941" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -54,19 +55,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="findUserButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-Iu-fjl">
-                                <rect key="frame" x="100" y="679" width="92" height="31"/>
+                                <rect key="frame" x="100" y="680.33333333333337" width="87.333333333333314" height="29.666666666666629"/>
                                 <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ID PW 찾기"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ID PW 찾기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="findUserAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="w8y-sy-A3J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="joinUserButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCf-0S-Sjr">
-                                <rect key="frame" x="217" y="679" width="73" height="31"/>
+                                <rect key="frame" x="221" y="680.33333333333337" width="69" height="29.666666666666629"/>
                                 <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                <buttonConfiguration key="configuration" style="plain" title="회원가입">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="joinUserAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="e2M-cm-qHZ"/>
                                 </connections>
