@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 /*
  회원가입
  */
 class JoinUserViewController: UIViewController {
+    
+    // Firebase
+    var firebaseDB: DatabaseReference!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -42,6 +47,18 @@ class JoinUserViewController: UIViewController {
     /* 가입하기 Button Action */
     @IBAction func joinButtonAction(_ sender: Any) {
         print("가입하기 click")
+        
+        /*
+         Firebase Test Code
+         가입하기 버튼 누르면 데이터 입력하고 화면 나가기.
+         */
+        let inputEmail: String? = emailTextField.text?.description
+        let inputPW: String? = confirmPwTextField.text?.description
+        
+        firebaseDB = Database.database().reference()
+        firebaseDB.child("memberJoin").setValue(["email":inputEmail, "password":inputPW])
+        
+        self.dismiss(animated: true)
     }
     
     
