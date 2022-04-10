@@ -19,6 +19,7 @@
 		6529E41B27FDC280005897A5 /* CommonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6529E41A27FDC280005897A5 /* CommonColor.swift */; };
 		6529E42127FDD8C9005897A5 /* JoinUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6529E41F27FDD8C9005897A5 /* JoinUserViewController.swift */; };
 		6529E42227FDD8C9005897A5 /* JoinUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6529E42027FDD8C9005897A5 /* JoinUserViewController.xib */; };
+		6529E42528032909005897A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6529E42428032909005897A5 /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6529E42528032909005897A5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +250,9 @@
 			dependencies = (
 			);
 			name = NeighBe;
+			packageProductDependencies = (
+				6529E42428032909005897A5 /* FirebaseAnalytics */,
+			);
 			productName = NeighBe;
 			productReference = 6529E3D927FC9D1B005897A5 /* NeighBe.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +325,9 @@
 				Base,
 			);
 			mainGroup = 6529E3D027FC9D1B005897A5;
+			packageReferences = (
+				6529E42328032909005897A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 6529E3DA27FC9D1B005897A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -704,6 +712,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6529E42328032909005897A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6529E42428032909005897A5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6529E42328032909005897A5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6529E3D127FC9D1B005897A5 /* Project object */;
 }
