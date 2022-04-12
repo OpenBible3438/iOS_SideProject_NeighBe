@@ -13,7 +13,7 @@ import UIKit
  ##### to-do #####
  - 화면 구현 O
  - 로그인 버튼 화면 이동
- - 회원가입 버튼 화면 이동
+ - 회원가입 버튼 화면 이동 0
  - id, pw 찾기
  
  - 소셜 로그인
@@ -39,6 +39,12 @@ class LoginViewController: UIViewController {
     
     /* Login Button Action */
     @IBAction func userLoginAction(_ sender: Any) {
+        /*
+         Process
+         - ID, PW 유효성 판단 -> true 화면이동 / false 실패 팝업
+         */
+        
+        // Firebase 회원 데이터 가져오기
         
     }
     

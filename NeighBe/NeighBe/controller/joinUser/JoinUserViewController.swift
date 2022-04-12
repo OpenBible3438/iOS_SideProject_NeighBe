@@ -10,13 +10,20 @@ import FirebaseDatabase
 
 /*
  회원가입
+ 
+ ##### to-do #####
+ - memberCode 채번
+ - 이메일 형식 유효성 검사
+ - 이메일 중복 검사
+ - 비밀번호 검증
+ - 비밀번호 확인
  */
 class JoinUserViewController: UIViewController {
     
     // Firebase
     var firebaseDB: DatabaseReference!
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var confirmPwTextField: UITextField!
     
@@ -29,7 +36,15 @@ class JoinUserViewController: UIViewController {
         // Switch, Button 비활성화
         confirmSwitch.isOn = false
         joinButton.isEnabled = false
+        
+        idTextField.addTarget(self, action: #selector(emailValidate), for: .editingChanged)
 
+    }
+    
+    /* TextField Validate */
+    // ID
+    @objc func emailValidate(sender: UITextField) {
+        
     }
     
     /* 개인정보 이용약관 동의 스위치 on off Action */
@@ -45,20 +60,21 @@ class JoinUserViewController: UIViewController {
     
     /* 가입하기 Button Action */
     @IBAction func joinButtonAction(_ sender: Any) {
-        print("가입하기 click")
-        
         /*
          Firebase Test Code
          가입하기 버튼 누르면 데이터 입력하고 화면 나가기.
          */
-        let inputEmail: String? = emailTextField.text?.description
+        let inputEmail: String? = idTextField.text?.description
         let inputPW: String? = confirmPwTextField.text?.description
         
+        // 모든 유효성 검사를 마친 후, 실제적으로 DB에 회원정보가 저장될 때, memberCode 채번
         firebaseDB = Database.database().reference()
         firebaseDB.child("memberJoin").setValue(["email":inputEmail, "password":inputPW])
         
         self.dismiss(animated: true)
     }
+    
+    
     
     
     /* Cancel Button Action */

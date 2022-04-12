@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="confirmPwTextField" destination="d8q-rQ-JmV" id="BUE-ot-OOy"/>
                 <outlet property="confirmSwitch" destination="BT3-cK-1ob" id="68Y-H6-q33"/>
-                <outlet property="emailTextField" destination="XJK-2W-sWO" id="Ieo-QK-mOx"/>
+                <outlet property="idTextField" destination="XJK-2W-sWO" id="lDQ-2K-8vo"/>
                 <outlet property="joinButton" destination="4TJ-9r-o69" id="tnW-Cp-xJS"/>
                 <outlet property="pwTextField" destination="wW0-Pc-W9X" id="F4R-NK-DkT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,7 +44,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-7l-2t4">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-7l-2t4">
                     <rect key="frame" x="70" y="195" width="45" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -127,7 +127,7 @@
                 <constraint firstItem="XJK-2W-sWO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="sbJ-U7-7Wj"/>
                 <constraint firstItem="jjl-CP-eEJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="u95-jc-isQ"/>
             </constraints>
-            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
+            <point key="canvasLocation" x="201" y="70"/>
         </view>
     </objects>
     <resources>
