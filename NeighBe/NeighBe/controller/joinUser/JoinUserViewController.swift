@@ -22,7 +22,7 @@ import Firebase
 class JoinUserViewController: UIViewController {
     
     // Firebase
-    var firebaseDB: DatabaseReference
+    var firebaseDB: DatabaseReference!
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
