@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 /*
  회원가입
@@ -21,7 +22,7 @@ import FirebaseDatabase
 class JoinUserViewController: UIViewController {
     
     // Firebase
-    var firebaseDB: DatabaseReference!
+    var firebaseDB: DatabaseReference
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -37,13 +38,13 @@ class JoinUserViewController: UIViewController {
         confirmSwitch.isOn = false
         joinButton.isEnabled = false
         
-        idTextField.addTarget(self, action: #selector(emailValidate), for: .editingChanged)
+        idTextField.addTarget(self, action: #selector(idValidate), for: .editingChanged)
 
     }
     
     /* TextField Validate */
     // ID
-    @objc func emailValidate(sender: UITextField) {
+    @objc func idValidate(sender: UITextField) {
         
     }
     
@@ -67,9 +68,9 @@ class JoinUserViewController: UIViewController {
         let inputEmail: String? = idTextField.text?.description
         let inputPW: String? = confirmPwTextField.text?.description
         
-        // 모든 유효성 검사를 마친 후, 실제적으로 DB에 회원정보가 저장될 때, memberCode 채번
-        firebaseDB = Database.database().reference()
-        firebaseDB.child("memberJoin").setValue(["email":inputEmail, "password":inputPW])
+        // 모든 유효성 검사를 마친 후, 실제적으로 DB에 회원정보가 저장될 때, userCode 채번
+        firebaseDB = Database.database().reference(withPath: "User")
+        firebaseDB.child("userCode2").setValue(["email":inputEmail, "password":inputPW, "userCode":"userCode2"])
         
         self.dismiss(animated: true)
     }
