@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 /*
  로그인
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var mainLogoImage: UIImageView!
     @IBOutlet weak var appNameLabel: UILabel!
     
-    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -39,13 +40,23 @@ class LoginViewController: UIViewController {
     
     /* Login Button Action */
     @IBAction func userLoginAction(_ sender: Any) {
-        /*
-         Process
-         - ID, PW 유효성 판단 -> true 화면이동 / false 실패 팝업
-         */
         
-        // Firebase 회원 데이터 가져오기
+        let email: String = emailTextField.text!.description
+        let pw: String = pwTextField.text!.description
         
+        // Firebase Auth Login
+        Auth.auth().signIn(withEmail: email, password: pw) {authResult, error in
+            if authResult != nil {
+                print("로그인 성공")
+            } else {
+                print("로그인 실패")
+                print(error.debugDescription)
+                if let errorCode: AuthErrorCode = AuthErrorCode(rawValue: error!._code) {
+                    print(errorCode.rawValue)
+                }
+            }
+            
+        }
     }
     
     /* ID PW 찾기 화면 이동 Action */
