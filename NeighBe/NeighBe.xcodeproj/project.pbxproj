@@ -22,6 +22,7 @@
 		6529E42528032909005897A5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6529E42428032909005897A5 /* FirebaseAnalytics */; };
 		6529E42828032EE0005897A5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6529E42728032EE0005897A5 /* FirebaseDatabase */; };
 		6529E42A28033D05005897A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6529E42928033D05005897A5 /* GoogleService-Info.plist */; };
+		655FDFA82820282600D437B7 /* ValidateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655FDFA72820282600D437B7 /* ValidateUtil.swift */; };
 		65CFD14C2818408400A51B89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 65CFD14B2818408400A51B89 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		6529E41F27FDD8C9005897A5 /* JoinUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUserViewController.swift; sourceTree = "<group>"; };
 		6529E42027FDD8C9005897A5 /* JoinUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinUserViewController.xib; sourceTree = "<group>"; };
 		6529E42928033D05005897A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		655FDFA72820282600D437B7 /* ValidateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		6529E3DB27FC9D1B005897A5 /* NeighBe */ = {
 			isa = PBXGroup;
 			children = (
+				655FDFA52820276000D437B7 /* common */,
 				6529E42928033D05005897A5 /* GoogleService-Info.plist */,
 				6529E41727FDC204005897A5 /* extenstion */,
 				6529E40E27FC9FFD005897A5 /* model */,
@@ -239,6 +242,14 @@
 				6529E42027FDD8C9005897A5 /* JoinUserViewController.xib */,
 			);
 			path = joinUser;
+			sourceTree = "<group>";
+		};
+		655FDFA52820276000D437B7 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				655FDFA72820282600D437B7 /* ValidateUtil.swift */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +398,7 @@
 				6529E41B27FDC280005897A5 /* CommonColor.swift in Sources */,
 				6529E41027FCA019005897A5 /* LoginViewController.swift in Sources */,
 				6529E3DD27FC9D1B005897A5 /* AppDelegate.swift in Sources */,
+				655FDFA82820282600D437B7 /* ValidateUtil.swift in Sources */,
 				6529E3DF27FC9D1B005897A5 /* SceneDelegate.swift in Sources */,
 				6529E42127FDD8C9005897A5 /* JoinUserViewController.swift in Sources */,
 			);
