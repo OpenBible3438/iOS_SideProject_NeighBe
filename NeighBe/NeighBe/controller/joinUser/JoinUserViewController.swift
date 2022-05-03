@@ -31,6 +31,8 @@ class JoinUserViewController: UIViewController {
     
     @IBOutlet weak var confirmSwitch: UISwitch!
     @IBOutlet weak var joinButton: UIButton!
+    
+    let joinUserModel: JoinUserModel! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,33 +64,20 @@ class JoinUserViewController: UIViewController {
     
     /* 가입하기 Button Action */
     @IBAction func joinButtonAction(_ sender: Any) {
-        /*
-         Firebase Test Code
-         가입하기 버튼 누르면 데이터 입력하고 화면 나가기.
-         */
         let inputEmail: String = idTextField.text!.description
         let inputPW: String = confirmPwTextField.text!.description
         
-        // 모든 유효성 검사를 마친 후, 실제적으로 DB에 회원정보가 저장될 때, userCode 채번
-        /*
-        firebaseDB = Database.database().reference(withPath: "User")
-        firebaseDB.child("userCode2").setValue(["email":inputEmail, "password":inputPW, "userCode":"userCode2"])
-        */
+        let resultCode = joinUserModel.joinUser(email: inputEmail, pw: inputPW)
         
-        Auth.auth().createUser(withEmail: inputEmail, password: inputPW) { authResult, error in
-            if authResult != nil {
-                print("회원가입 성공")
-                print("자동 로그인")
-            } else {
-                print("회원가입 실패")
-                print(error.debugDescription)
-            }
+        if resultCode == 1 {
+            // 회원가입 성공
+            self.dismiss(animated: true)
+        } else {
+            // 회원가입 실패
+            
         }
         
-        self.dismiss(animated: true)
     }
-    
-    
     
     
     /* Cancel Button Action */
