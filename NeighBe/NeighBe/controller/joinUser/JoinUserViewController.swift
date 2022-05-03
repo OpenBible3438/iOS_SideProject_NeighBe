@@ -32,7 +32,7 @@ class JoinUserViewController: UIViewController {
     @IBOutlet weak var confirmSwitch: UISwitch!
     @IBOutlet weak var joinButton: UIButton!
     
-    let joinUserModel: JoinUserModel! = nil
+    let joinUserModel: JoinUserModel! = JoinUserModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,14 +67,41 @@ class JoinUserViewController: UIViewController {
         let inputEmail: String = idTextField.text!.description
         let inputPW: String = confirmPwTextField.text!.description
         
-        let resultCode = joinUserModel.joinUser(email: inputEmail, pw: inputPW)
+        var resultCode = 0
         
-        if resultCode == 1 {
-            // 회원가입 성공
-            self.dismiss(animated: true)
-        } else {
-            // 회원가입 실패
-            
+        //let dispatchGroup = DispatchGroup()
+        let queue1 = DispatchQueue(label: "joinUserQueue1")
+        let queue2 = DispatchQueue(label: "joinUserQueue2")
+        let queue3 = DispatchQueue(label: "joinUserQueue3")
+        queue1.sync {
+            resultCode = joinUserModel.joinUser(email: inputEmail, pw: inputPW)
+        }
+        
+        queue2.sync {
+            print("joinUserModel.joinUser() resultCode : ", resultCode)
+        }
+        
+        queue3.sync {
+            if resultCode == 1 {
+                // 회원가입 성공
+                print("회원가입 성공 Alert")
+                
+                let alert = UIAlertController(title: "알림", message: "회원가입 성공!", preferredStyle: .alert)
+                let alertOKAction = UIAlertAction(title: "OK", style: .default) {_ in
+                    self.dismiss(animated: true)
+                }
+                alert.addAction(alertOKAction)
+                self.present(alert, animated: false)
+                
+            } else {
+                // 회원가입 실패
+                print("회원가입 실패 Alert")
+                
+                let alert = UIAlertController(title: "알림", message: "회원가입 실패!", preferredStyle: .alert)
+                let alertOKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(alertOKAction)
+                self.present(alert, animated: false)
+            }
         }
         
     }

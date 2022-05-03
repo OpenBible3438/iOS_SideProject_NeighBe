@@ -17,19 +17,22 @@ class JoinUserModel {
      */
     func joinUser(email: String, pw: String) -> Int {
         
+        print("JoinUserModel.joinUser() 실행")
+        
         var resultCode = 0
         
         Auth.auth().createUser(withEmail: email, password: email) { authResult, error in
             if authResult != nil {
-                print("회원가입 성공")
-                print("자동 로그인")
+                print("JoinUserModel.joinUser() 회원가입 성공")
+                print("JoinUserModel.joinUser() 자동 로그인")
                 resultCode = 1
             } else {
-                print("회원가입 실패")
+                print("JoinUserModel.joinUser() 회원가입 실패")
                 print(error.debugDescription)
                 resultCode = 0
             }
         }
+        
         
         return resultCode
     }
