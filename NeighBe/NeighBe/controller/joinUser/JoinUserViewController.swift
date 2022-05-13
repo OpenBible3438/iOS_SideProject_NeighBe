@@ -25,14 +25,14 @@ class JoinUserViewController: UIViewController {
     // Firebase
     var firebaseDB: DatabaseReference!
     
+    let joinUserModel: JoinUserModel! = JoinUserModel()
+    
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var confirmPwTextField: UITextField!
     
     @IBOutlet weak var confirmSwitch: UISwitch!
     @IBOutlet weak var joinButton: UIButton!
-    
-    let joinUserModel: JoinUserModel! = JoinUserModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,25 +67,13 @@ class JoinUserViewController: UIViewController {
         let inputEmail: String = idTextField.text!.description
         let inputPW: String = confirmPwTextField.text!.description
         
-        var resultCode = 0
-        
-        //let dispatchGroup = DispatchGroup()
-        let queue1 = DispatchQueue(label: "joinUserQueue1")
-        let queue2 = DispatchQueue(label: "joinUserQueue2")
-        let queue3 = DispatchQueue(label: "joinUserQueue3")
-        queue1.sync {
-            resultCode = joinUserModel.joinUser(email: inputEmail, pw: inputPW)
-        }
-        
-        queue2.sync {
-            print("joinUserModel.joinUser() resultCode : ", resultCode)
-        }
-        
-        queue3.sync {
-            if resultCode == 1 {
+        print("[JoinUserViewController] joinButtonAction() 시작")
+        Auth.auth().createUser(withEmail: inputEmail, password: inputPW) {authResult, error in
+            if authResult != nil {
                 // 회원가입 성공
-                print("회원가입 성공 Alert")
+                // DB 회원 데이터 저장 로직 추가
                 
+                print("[JoinUserViewController] Firebase 회원가입 성공")
                 let alert = UIAlertController(title: "알림", message: "회원가입 성공!", preferredStyle: .alert)
                 let alertOKAction = UIAlertAction(title: "OK", style: .default) {_ in
                     self.dismiss(animated: true)
@@ -95,14 +83,15 @@ class JoinUserViewController: UIViewController {
                 
             } else {
                 // 회원가입 실패
-                print("회원가입 실패 Alert")
                 
+                print("[JoinUserViewController] Firebase 회원가입 실패")
                 let alert = UIAlertController(title: "알림", message: "회원가입 실패!", preferredStyle: .alert)
-                let alertOKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alertOKAction = UIAlertAction(title: "OK", style: .default)
                 alert.addAction(alertOKAction)
                 self.present(alert, animated: false)
             }
         }
+        print("[JoinUserViewController] joinButtonAction() 종료")
         
     }
     
