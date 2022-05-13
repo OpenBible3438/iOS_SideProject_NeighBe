@@ -22,9 +22,6 @@ import FirebaseAuth
  */
 class JoinUserViewController: UIViewController {
     
-    // Firebase
-    var firebaseDB: DatabaseReference!
-    
     let joinUserModel: JoinUserModel! = JoinUserModel()
     
     @IBOutlet weak var idTextField: UITextField!
@@ -72,8 +69,18 @@ class JoinUserViewController: UIViewController {
             if authResult != nil {
                 // 회원가입 성공
                 // DB 회원 데이터 저장 로직 추가
-                
                 print("[JoinUserViewController] Firebase 회원가입 성공")
+                print("[JoinUserViewController] 유저 자동 로그인")
+                print("[JoinUserViewController] 유저 정보 DB 저장")
+                
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    let uid = user.uid
+                    let email = user.email
+                    
+                    self.joinUserModel.saveUserInfo(uid: uid, email: email)
+                }
+                
                 let alert = UIAlertController(title: "알림", message: "회원가입 성공!", preferredStyle: .alert)
                 let alertOKAction = UIAlertAction(title: "OK", style: .default) {_ in
                     self.dismiss(animated: true)

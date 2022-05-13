@@ -11,15 +11,15 @@ import FirebaseAuth
 
 class JoinUserModel {
     
+    // Firebase
+    var firebaseDB: DatabaseReference!
+    
     /*
      회원가입시 사용자 정보 Firebase DB 저장
      */
-    func saveUserInfo() {
-        // 모든 유효성 검사를 마친 후, 실제적으로 DB에 회원정보가 저장될 때, userCode 채번
-        /*
+    func saveUserInfo(uid: String!, email: String!) {
         firebaseDB = Database.database().reference(withPath: "User")
-        firebaseDB.child("userCode2").setValue(["email":inputEmail, "password":inputPW, "userCode":"userCode2"])
-        */
+        firebaseDB.child(uid).setValue(["email":email,"homeYn":"N"])
     }
     
 }

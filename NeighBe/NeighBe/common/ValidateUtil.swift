@@ -25,4 +25,12 @@ class ValidateUtil {
         return true
     }
     
+    /*
+     비밀번호
+     */
+    
+    /*
+     닉네임
+     */
+    
 }
