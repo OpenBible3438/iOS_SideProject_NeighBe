@@ -65,6 +65,10 @@ class JoinUserViewController: UIViewController {
         let inputPW: String = confirmPwTextField.text!.description
         
         print("[JoinUserViewController] joinButtonAction() 시작")
+        
+        // 회원가입 로직
+        // joinUserModel.joinUser(email: inputEmail, pw: inputPW)
+        
         Auth.auth().createUser(withEmail: inputEmail, password: inputPW) {authResult, error in
             if authResult != nil {
                 // 회원가입 성공
@@ -78,7 +82,9 @@ class JoinUserViewController: UIViewController {
                     let uid = user.uid
                     let email = user.email
                     
-                    self.joinUserModel.saveUserInfo(uid: uid, email: email)
+                    self.joinUserModel.saveUserInfo(uid: uid, email: email) // 가입된 회원 정보 DB 저장
+                    self.joinUserModel.sendAuthEmail() // 인증 이메일 발송
+                    try? Auth.auth().signOut()
                 }
                 
                 let alert = UIAlertController(title: "알림", message: "회원가입 성공!", preferredStyle: .alert)
