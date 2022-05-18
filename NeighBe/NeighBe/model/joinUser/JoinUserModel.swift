@@ -9,10 +9,23 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
+/*
+ To-Do
+ 이메일, 닉네임 중복 검사 로직 추가하기
+ */
 class JoinUserModel {
     
     // Firebase
     var firebaseDB: DatabaseReference!
+    
+    /*
+     이메일 중복 검사
+     */
+    
+    /*
+     닉네임 중복 검사
+     */
+    
     
     /*
      회원가입시 사용자 정보 Firebase DB 저장
