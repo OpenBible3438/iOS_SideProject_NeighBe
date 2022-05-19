@@ -24,8 +24,25 @@ class JoinUserModel {
     /*
      이메일 중복 검사
      */
-    func isEmailCheck(email: String) {
-        print("이메일 중복 검사 테스트 !!")
+    func isEmailCheck(email: String) -> Bool {
+        var result = false
+        
+        let userDB = db.collection("USER")
+        // 입력한 이메일이 있는지 확인 쿼리
+        let query = userDB.whereField("email", isEqualTo: email)
+        query.getDocuments() { (qs, err) in
+            
+            if qs!.documents.isEmpty {
+                print("데이터 중복 안 됨 가입 진행 가능")
+                result = true
+            } else {
+                print("데이터 중복 됨 가입 진행 불가")
+                result = false
+            }
+        }
+        
+        /*
+         // store DB 불러오기 테스트
         db.collection("USER").getDocuments() { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -35,6 +52,8 @@ class JoinUserModel {
                 }
             }
         }
+        */
+        return result
     }
     
     /*

@@ -116,7 +116,10 @@ class JoinUserViewController: UIViewController {
         print("이메일 중복 검사 버튼 클릭")
         
         let inputEmail: String = idTextField.text!.description
-        joinUserModel.isEmailCheck(email: inputEmail)
+        let checkResult = joinUserModel.isEmailCheck(email: inputEmail)
+        if checkResult {
+            print("중복 없음 가입 진행")
+        }
     }
     
     /* Cancel Button Action */
