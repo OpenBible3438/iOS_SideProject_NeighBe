@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="confirmPwTextField" destination="d8q-rQ-JmV" id="BUE-ot-OOy"/>
                 <outlet property="confirmSwitch" destination="BT3-cK-1ob" id="68Y-H6-q33"/>
+                <outlet property="emailCheckButton" destination="KHg-8b-JPJ" id="Bgb-cA-u8X"/>
                 <outlet property="idTextField" destination="XJK-2W-sWO" id="lDQ-2K-8vo"/>
                 <outlet property="joinButton" destination="4TJ-9r-o69" id="tnW-Cp-xJS"/>
                 <outlet property="pwTextField" destination="wW0-Pc-W9X" id="F4R-NK-DkT"/>
@@ -94,6 +95,15 @@
                     </buttonConfiguration>
                     <connections>
                         <action selector="joinButtonAction:" destination="-1" eventType="touchUpInside" id="tf6-G5-Oki"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHg-8b-JPJ">
+                    <rect key="frame" x="237" y="191" width="107" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="중복검사TEST"/>
+                    <connections>
+                        <action selector="emailCheck:" destination="-1" eventType="touchUpInside" id="cIZ-dn-oVd"/>
                     </connections>
                 </button>
             </subviews>

@@ -51,9 +51,6 @@ class LoginViewController: UIViewController {
             } else {
                 print("로그인 실패")
                 print(error.debugDescription)
-                if let errorCode: AuthErrorCode = AuthErrorCode(rawValue: error!._code) {
-                    print(errorCode.rawValue)
-                }
             }
             
         }

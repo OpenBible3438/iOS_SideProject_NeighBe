@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 /*
  To-Do
@@ -17,14 +18,31 @@ class JoinUserModel {
     
     // Firebase
     var firebaseDB: DatabaseReference!
+    var firestore: Firestore!
+    let db = Firestore.firestore()
     
     /*
      이메일 중복 검사
      */
+    func isEmailCheck(email: String) {
+        print("이메일 중복 검사 테스트 !!")
+        db.collection("USER").getDocuments() { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
     
     /*
      닉네임 중복 검사
      */
+    func isNicknameCheck(nickname: String) {
+        
+    }
     
     
     /*

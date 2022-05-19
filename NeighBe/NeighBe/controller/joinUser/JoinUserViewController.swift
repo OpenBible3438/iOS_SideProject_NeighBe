@@ -30,6 +30,9 @@ class JoinUserViewController: UIViewController {
     
     @IBOutlet weak var confirmSwitch: UISwitch!
     @IBOutlet weak var joinButton: UIButton!
+    
+    @IBOutlet weak var emailCheckButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +111,13 @@ class JoinUserViewController: UIViewController {
         
     }
     
+    /* 이메일 중복검사 Button Action */
+    @IBAction func emailCheck(_ sender: Any) {
+        print("이메일 중복 검사 버튼 클릭")
+        
+        let inputEmail: String = idTextField.text!.description
+        joinUserModel.isEmailCheck(email: inputEmail)
+    }
     
     /* Cancel Button Action */
     @IBAction func cancelAction(_ sender: Any) {
