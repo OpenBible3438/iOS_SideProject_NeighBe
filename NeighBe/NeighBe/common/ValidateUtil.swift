@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 /*
  유효성 검사
@@ -32,5 +33,22 @@ class ValidateUtil {
     /*
      닉네임
      */
+    func isValidNickname(nickname: String) -> Bool {
+        var result = false
+        
+        let db = Firestore.firestore()
+        let userDB = db.collection("USER")
+        let query = userDB.whereField("nickname", isEqualTo: nickname)
+        query.getDocuments() { (qs, err) in
+            if qs!.documents.isEmpty {
+                // 중복 안 됨
+                result = true
+            } else {
+                // 중복 됨
+                result = false
+            }
+        }
+        return result
+    }
     
 }
