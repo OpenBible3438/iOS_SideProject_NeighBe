@@ -57,14 +57,6 @@ class JoinUserModel {
     }
     
     /*
-     닉네임 중복 검사
-     */
-    func isNicknameCheck(nickname: String) {
-        
-    }
-    
-    
-    /*
      회원가입시 사용자 정보 Firebase DB 저장
      */
     func saveUserInfo(uid: String!, email: String!) {

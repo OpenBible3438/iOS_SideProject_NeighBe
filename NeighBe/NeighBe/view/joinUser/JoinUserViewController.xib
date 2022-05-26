@@ -52,7 +52,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XJK-2W-sWO">
-                    <rect key="frame" x="70" y="221" width="274" height="34"/>
+                    <rect key="frame" x="70" y="221" width="184" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -97,11 +97,10 @@
                         <action selector="joinButtonAction:" destination="-1" eventType="touchUpInside" id="tf6-G5-Oki"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHg-8b-JPJ">
-                    <rect key="frame" x="237" y="191" width="107" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHg-8b-JPJ">
+                    <rect key="frame" x="264" y="221" width="80" height="34"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="중복검사TEST"/>
+                    <buttonConfiguration key="configuration" style="filled" title="중복확인"/>
                     <connections>
                         <action selector="emailCheck:" destination="-1" eventType="touchUpInside" id="cIZ-dn-oVd"/>
                     </connections>
@@ -115,6 +114,7 @@
                 <constraint firstItem="BT3-cK-1ob" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2ig-Iq-mrN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wW0-Pc-W9X" secondAttribute="trailing" constant="70" id="2lS-p6-GA3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d8q-rQ-JmV" secondAttribute="trailing" constant="70" id="6vp-mz-xgV"/>
+                <constraint firstItem="KHg-8b-JPJ" firstAttribute="leading" secondItem="XJK-2W-sWO" secondAttribute="trailing" constant="10" id="7hF-VU-79i"/>
                 <constraint firstItem="TQZ-7l-2t4" firstAttribute="top" secondItem="jjl-CP-eEJ" secondAttribute="bottom" constant="100" id="BH6-ea-baf"/>
                 <constraint firstItem="1sM-BI-e4E" firstAttribute="top" secondItem="d8q-rQ-JmV" secondAttribute="bottom" constant="60" id="CKQ-Rg-Uy7"/>
                 <constraint firstItem="BYR-V6-jow" firstAttribute="top" secondItem="wW0-Pc-W9X" secondAttribute="bottom" constant="5" id="CnQ-ap-HIV"/>
@@ -125,6 +125,7 @@
                 <constraint firstItem="1sM-BI-e4E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jwb-55-aMQ"/>
                 <constraint firstItem="qZ4-mF-QwA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="Kgd-fi-y8C"/>
                 <constraint firstItem="d8q-rQ-JmV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="LCs-iu-5lB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KHg-8b-JPJ" secondAttribute="trailing" constant="70" id="Sqz-Tr-2S0"/>
                 <constraint firstItem="TQZ-7l-2t4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="TXT-J5-1tH"/>
                 <constraint firstItem="GsD-go-9jQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YGY-IM-23Y"/>
                 <constraint firstItem="GsD-go-9jQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="bx7-Vz-30P"/>
@@ -132,8 +133,10 @@
                 <constraint firstItem="qZ4-mF-QwA" firstAttribute="top" secondItem="XJK-2W-sWO" secondAttribute="bottom" constant="5" id="egw-uv-21V"/>
                 <constraint firstItem="wW0-Pc-W9X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="i2l-cM-F0x"/>
                 <constraint firstItem="4TJ-9r-o69" firstAttribute="top" secondItem="BT3-cK-1ob" secondAttribute="bottom" constant="40" id="i3F-W9-Y2b"/>
+                <constraint firstItem="KHg-8b-JPJ" firstAttribute="bottom" secondItem="XJK-2W-sWO" secondAttribute="bottom" id="mHx-GN-WFQ"/>
                 <constraint firstItem="BYR-V6-jow" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="mJx-ah-hFS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XJK-2W-sWO" secondAttribute="trailing" constant="70" id="qrx-9O-jr4"/>
+                <constraint firstItem="KHg-8b-JPJ" firstAttribute="top" secondItem="XJK-2W-sWO" secondAttribute="top" id="p7X-eU-rB8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XJK-2W-sWO" secondAttribute="trailing" constant="160" id="qrx-9O-jr4"/>
                 <constraint firstItem="XJK-2W-sWO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="sbJ-U7-7Wj"/>
                 <constraint firstItem="jjl-CP-eEJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="u95-jc-isQ"/>
             </constraints>

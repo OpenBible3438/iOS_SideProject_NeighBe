@@ -42,6 +42,9 @@ class JoinUserViewController: UIViewController {
         joinButton.isEnabled = false
         
         idTextField.addTarget(self, action: #selector(idValidate), for: .editingChanged)
+        
+        // 이메일 형식이 맞지 않으면 중복검사 버튼 비활성화
+        emailCheckButton.isEnabled = false
 
     }
     
