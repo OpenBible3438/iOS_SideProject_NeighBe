@@ -44,7 +44,7 @@ class JoinUserViewController: UIViewController {
         idTextField.addTarget(self, action: #selector(idValidate), for: .editingChanged)
         
         // 이메일 형식이 맞지 않으면 중복검사 버튼 비활성화
-        emailCheckButton.isEnabled = false
+        // emailCheckButton.isEnabled = false
 
     }
     
@@ -79,16 +79,13 @@ class JoinUserViewController: UIViewController {
             if authResult != nil {
                 // 회원가입 성공
                 // DB 회원 데이터 저장 로직 추가
-                print("[JoinUserViewController] Firebase 회원가입 성공")
-                print("[JoinUserViewController] 유저 자동 로그인")
-                print("[JoinUserViewController] 유저 정보 DB 저장")
-                
                 let user = Auth.auth().currentUser
                 if let user = user {
                     let uid = user.uid
                     let email = user.email
+                    let pw = inputPW
                     
-                    self.joinUserModel.saveUserInfo(uid: uid, email: email) // 가입된 회원 정보 DB 저장
+                    self.joinUserModel.saveUserInfo(uid: uid, email: email, pw: pw) // 가입된 회원 정보 DB 저장
                     self.joinUserModel.sendAuthEmail() // 인증 이메일 발송
                     try? Auth.auth().signOut()
                 }
@@ -102,7 +99,6 @@ class JoinUserViewController: UIViewController {
                 
             } else {
                 // 회원가입 실패
-                
                 print("[JoinUserViewController] Firebase 회원가입 실패")
                 let alert = UIAlertController(title: "알림", message: "회원가입 실패!", preferredStyle: .alert)
                 let alertOKAction = UIAlertAction(title: "OK", style: .default)

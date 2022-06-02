@@ -59,9 +59,30 @@ class JoinUserModel {
     /*
      회원가입시 사용자 정보 Firebase DB 저장
      */
-    func saveUserInfo(uid: String!, email: String!) {
+    func saveUserInfo(uid: String!, email: String!, pw: String!) {
+        print("[JoinUserModel] saveUserInfo() 사용자 정보 firestore 저장")
+        /*
         firebaseDB = Database.database().reference(withPath: "User")
         firebaseDB.child(uid).setValue(["email":email,"homeYn":"N", "emailAuthYn":"N"])
+        */
+        
+        // 2022.06.02 Auth 회원가입 후 Firestore에 사용자 정보 저장
+        let userDB = db.collection("USER")
+        let userData : [String : String] = [
+              "authYn" : "N"
+            , "email" : email
+            , "homeYn" : "N"
+            , "nickname" : "unknown"
+            , "pw" : pw
+        ]
+        userDB.document(email).setData(userData) { err in
+            if let err = err {
+                print("[JoinUserModel] saveUserInfo writing document err : \(err)")
+            } else {
+                
+                print("[JoinUserModel] saveUserInfo writing document success!")
+            }
+        }
     }
     
     /*
