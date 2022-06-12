@@ -44,10 +44,25 @@ class LoginViewController: UIViewController {
         let email: String = emailTextField.text!.description
         let pw: String = pwTextField.text!.description
         
+        // 이메일 인증 여부 판단 -> model
+        
+        
         // Firebase Auth Login
         Auth.auth().signIn(withEmail: email, password: pw) {authResult, error in
             if authResult != nil {
                 print("로그인 성공")
+                
+                let emailVerified = Auth.auth().currentUser?.isEmailVerified
+                print("이메일 인증 여부 : \(emailVerified.debugDescription)")
+                // 이메일 인증 여부 판단
+                if Auth.auth().currentUser?.isEmailVerified == true {
+                    // 이메일 인증 True
+                    print("[LoginViewController] 이메일 인증 계정 로그인 성공")
+                } else {
+                    // 이메일 인증 False
+                    print("[LoginViewController] 이메일 비인증 계정 로그인 실패")
+                    try? Auth.auth().signOut()
+                }
             } else {
                 print("로그인 실패")
                 print(error.debugDescription)

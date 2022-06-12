@@ -27,6 +27,7 @@
 		65829ED52836868B0076F3B8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 65829ED42836868B0076F3B8 /* FirebaseDatabase */; };
 		65829ED72836868B0076F3B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 65829ED62836868B0076F3B8 /* FirebaseFirestore */; };
 		65829ED92836868B0076F3B8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 65829ED82836868B0076F3B8 /* FirebaseStorage */; };
+		65EFB6DB2850C0EA0094526C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFB6DA2850C0EA0094526C /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		6529E42928033D05005897A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6554796028216D490015036F /* JoinUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinUserModel.swift; sourceTree = "<group>"; };
 		655FDFA72820282600D437B7 /* ValidateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtil.swift; sourceTree = "<group>"; };
+		65EFB6DA2850C0EA0094526C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		6529E41627FDBE93005897A5 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				65EFB6DA2850C0EA0094526C /* LoginModel.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				6529E3DD27FC9D1B005897A5 /* AppDelegate.swift in Sources */,
 				655FDFA82820282600D437B7 /* ValidateUtil.swift in Sources */,
 				6529E3DF27FC9D1B005897A5 /* SceneDelegate.swift in Sources */,
+				65EFB6DB2850C0EA0094526C /* LoginModel.swift in Sources */,
 				6554796128216D490015036F /* JoinUserModel.swift in Sources */,
 				6529E42127FDD8C9005897A5 /* JoinUserViewController.swift in Sources */,
 			);
